@@ -9,7 +9,7 @@ jobs:
   MyFirstJob:
     runs-on: ubuntu-latest
     env:
-        SECRET_WORD: ${{ secrets.SecretWord }}
+        SECRET_WORD: ${{ secrets.Secret_Word }}
 
     steps:
       - run: echo "👋 Hello World!"
