@@ -22,7 +22,10 @@ jobs:
           tree
 
       - name: CompletionCheck
-        if: ${{ success() }}
-          echo "Completed as expected"
+        if: success()
+        run: |
+            echo "Completed as expected"
+        
+        
 
       
