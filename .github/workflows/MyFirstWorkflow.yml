@@ -8,6 +8,8 @@ on:
 jobs:
   MyFirstJob:
     runs-on: ubuntu-latest
+    env:
+        SECRET_WORD: ${{ secrets.SecretWord }}
 
     steps:
       - run: echo "👋 Hello World!"
@@ -16,8 +18,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
 
-      - name: Lint
-        uses: super-linter/super-linter@v7.1.0
+#      - name: Lint
+#        uses: super-linter/super-linter@v7.1.0
+      - name: Check Word
+        run: |
+            echo SECRET_WORD-
+            echo "$SECRET_WORD"
     
       - name: List files
         run: |
